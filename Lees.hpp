@@ -19,6 +19,7 @@ std::string INIT_ARR_FILE = "./INIT_ARR_"+std::to_string(TIMES)+".txt";         
 std::string INFECTION_ARR_FILE = "./INFECTION_ARR_"+std::to_string(TIMES)+".txt";   //记录感染后的矩阵结果
 std::string FEEDBACK_ARR_FILE = "./FEEDBACK_ARR_"  +std::to_string(TIMES)+".txt";   //记录回溯后的矩阵结果
 std::string ROAD_FILE = "./ROAD_"+std::to_string(TIMES)+".txt";         //用来记录最后回溯的路径
+std::string BLOCK_INFO_FILE = "./BLOCK_INFO_"+std::to_string(TIMES)+".txt"; //用来记录分块信息
 std::vector<std::vector<int>> ROAD_XY;    //记录最后回溯的路径xy坐标
 
 bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY,int x,int y){//递归感染
@@ -57,20 +58,43 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     //矩阵tmp用于执行递归的infection,顺带保存初始矩阵结果
     INIT_ARR_FILE = "./INIT_ARR_"+std::to_string(TIMES)+".txt"; //记录初始矩阵结果
     std::ofstream INIT_ARR(INIT_ARR_FILE);  //打开初始矩阵文件
-    //************************************************写到这儿-保存初始矩阵文件
+    if(!INIT_ARR.is_open()){                //文件打开失败
+        cout<<"FILE_INIT_ARR_OPEN_ERROR"<<endl;
+        exit(-1);
+    }
     std::vector<std::vector<int>>tmp(arr.size(),std::vector<int>(arr[0].size(),0));
     for(int i = 0;i < arr.size();i++){
         for(int j = 0;j < arr[0].size();j++){
             tmp[i][j] = arr[i][j];
+            INIT_ARR<<tmp[i][j]<<"\t";      //写入文件
         }
+        INIT_ARR<<endl;                     //换行
     }
+    INIT_ARR.close();
+    
     //1.分块
     BLOCK_X = BLOCK_Y = 1;  //初始化为1
     if(arr.size()<=BLOCKYSIZE)  BLOCK_Y = 1;            //Y方向分成1个块
     else while(arr.size()/(++BLOCK_Y)>BLOCKYSIZE);      //找到合适的纵向分块数        
     if(arr[0].size()<=BLOCKXSIZE) BLOCK_X = 1;          //X方向分成1个块
     else while(arr[0].size()/(++BLOCK_X)>BLOCKXSIZE);   //找到合适的横向分块数
+    BLOCK_INFO_FILE = "./BLOCK_INFO_"+std::to_string(TIMES)+".txt"; //将分块信息写入文件
+    std::ofstream BLOCK_INFO(BLOCK_INFO_FILE);
+    if(!BLOCK_INFO.is_open()){
+        cout<<"FILE_BLOCK_INFO_OPEN_ERROR"<<endl;
+        exit(-1);
+    }
+    BLOCK_INFO<<"X方向的分块数 = "<<BLOCK_X<<endl;
+    BLOCK_INFO<<"Y方向的分块数 = "<<BLOCK_Y<<endl;
+    BLOCK_INFO.close();
+
     //2.从起点开始对每个块做非递归infection
+    INFECTION_ARR_FILE = "./INFECTION_NON_ARR_"+std::to_string(TIMES)+".txt";   //保存非递归结果
+    std::ofstream INFECTION_NON_ARR(INFECTION_ARR_FILE);
+    if(!INFECTION_NON_ARR.is_open()){
+        cout<<"FILE_INFECTION_NON_ARR_OPEN_ERROR"<<endl;
+        exit(-1);
+    }
     auto infection_start_time = std::chrono::steady_clock::now();   //开始时间
     for(int i=0;i<BLOCK_X;++i){     //X方向的第i个块
         for(int j=0;j<BLOCK_Y;++j){ //Y方向的第j个块
@@ -86,8 +110,22 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
         }
     }
     auto infection_end_time = std::chrono::steady_clock::now();     //结束时间
+    for(int i = 0;i < arr.size();i++){
+        for(int j = 0;j < arr[0].size();j++){
+            INFECTION_NON_ARR<<arr[i][j]<<"\t";      //写入文件
+        }
+        INFECTION_NON_ARR<<endl;                     //换行
+    }
+    INFECTION_NON_ARR.close();
     INFECTION_NON_TIME = (std::chrono::duration_cast<std::chrono::milliseconds>(infection_end_time-infection_start_time)).count();
+    
     //3.从起点开始对每个块做递归infection
+    INFECTION_ARR_FILE = "./INFECTION_ARR_"+std::to_string(TIMES)+".txt";   //保存非递归结果
+    std::ofstream INFECTION_ARR(INFECTION_ARR_FILE);
+    if(!INFECTION_ARR.is_open()){
+        cout<<"FILE_INFECTION_NON_ARR_OPEN_ERROR"<<endl;
+        exit(-1);
+    }
     infection_start_time = std::chrono::steady_clock::now();   //开始时间
     for(int i=0;i<BLOCK_X;++i){     //X方向的第i个块
         for(int j=0;j<BLOCK_Y;++j){ //Y方向的第j个块
@@ -103,12 +141,21 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
         }
     }
     infection_end_time = std::chrono::steady_clock::now();     //结束时间
+    for(int i = 0;i < arr.size();i++){
+        for(int j = 0;j < arr[0].size();j++){
+            INFECTION_ARR<<arr[i][j]<<"\t";      //写入文件
+        }
+        INFECTION_ARR<<endl;                     //换行
+    }
+    INFECTION_ARR.close();
     INFECTION_TIME = (std::chrono::duration_cast<std::chrono::milliseconds>(infection_end_time-infection_start_time)).count();
+    
     //4.回溯
     auto feedback_time = std::chrono::steady_clock::now();   //开始时间
     //回溯
     auto feedback_end_time = std::chrono::steady_clock::now();     //结束时间
     FEEDBACK_TIME = (std::chrono::duration_cast<std::chrono::milliseconds>(feedback_end_time-feedback_time)).count();
+    
     //5.将所有中间结果记录到文件中
 
 
