@@ -22,7 +22,7 @@ std::string ROAD_FILE = "./ROAD_"+std::to_string(TIMES)+".txt";         //用来记
 std::string BLOCK_INFO_FILE = "./BLOCK_INFO_"+std::to_string(TIMES)+".txt"; //用来记录分块信息
 std::vector<std::vector<int>> ROAD_XY;    //记录最后回溯的路径xy坐标
 
-bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY,int x,int y){//递归感染
+bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY,int x,int y) {//递归感染
     if(x < LeftUpX || x > RightDownX || y < LeftUpY || y > RightDownY)return false;  //越界直接返回false
     if(arr[x][y] != 0 && arr[x][y] != INT_MAX && arr[x][y] != INT_MIN)return false;  //非通路直接返回false
     if(arr[x][y] == INT_MAX) return true;   //走到终点,返回true
@@ -39,9 +39,9 @@ bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int Rig
     return up?true:false;   //走到终点就结束,否则返回false
 }
 
-bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY){    //非递归感染
-    for(int i = LeftUpX;i <= RightDownX;++i){   //直接遍历整个数组进行感染
-        for(int j = LeftUpY;j <= RightDownY;++j){
+bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY) {    //非递归感染
+    for(int i = LeftUpX;i <= RightDownX;++i) {   //直接遍历整个数组进行感染
+        for(int j = LeftUpY;j <= RightDownY;++j) {
             if(arr[i][j] == 0)
                 arr[i][j] = abs(i - SX) + abs(j - SY);
             else if(arr[i][j] == INT_MAX)return true;   //走到终点返回true
@@ -49,7 +49,14 @@ bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int Rig
     }
 }
 
-bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey){  //count用于表示这是第几个矩阵
+void Feedback(std::vector<std::vector<int>>&arr) {  //回溯
+    int i = SX,j = SY;
+    while(i != EX || j != EY) { //未走到终点时
+        
+    }
+}
+
+bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey) {  //count用于表示这是第几个矩阵
     SX = sx;    //记录起终点坐标
     SY = sy;
     EX = ex;
@@ -58,13 +65,13 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     //矩阵tmp用于执行递归的infection,顺带保存初始矩阵结果
     INIT_ARR_FILE = "./INIT_ARR_"+std::to_string(TIMES)+".txt"; //记录初始矩阵结果
     std::ofstream INIT_ARR(INIT_ARR_FILE);  //打开初始矩阵文件
-    if(!INIT_ARR.is_open()){                //文件打开失败
+    if(!INIT_ARR.is_open()) {                //文件打开失败
         cout<<"FILE_INIT_ARR_OPEN_ERROR"<<endl;
         exit(-1);
     }
     std::vector<std::vector<int>>tmp(arr.size(),std::vector<int>(arr[0].size(),0));
-    for(int i = 0;i < arr.size();i++){
-        for(int j = 0;j < arr[0].size();j++){
+    for(int i = 0;i < arr.size();i++) {
+        for(int j = 0;j < arr[0].size();j++) {
             tmp[i][j] = arr[i][j];
             INIT_ARR<<tmp[i][j]<<"\t";      //写入文件
         }
@@ -80,7 +87,7 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     else while(arr[0].size()/(++BLOCK_X)>BLOCKXSIZE);   //找到合适的横向分块数
     BLOCK_INFO_FILE = "./BLOCK_INFO_"+std::to_string(TIMES)+".txt"; //将分块信息写入文件
     std::ofstream BLOCK_INFO(BLOCK_INFO_FILE);
-    if(!BLOCK_INFO.is_open()){
+    if(!BLOCK_INFO.is_open()) {
         cout<<"FILE_BLOCK_INFO_OPEN_ERROR"<<endl;
         exit(-1);
     }
@@ -91,13 +98,13 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     //2.从起点开始对每个块做非递归infection
     INFECTION_ARR_FILE = "./INFECTION_NON_ARR_"+std::to_string(TIMES)+".txt";   //保存非递归结果
     std::ofstream INFECTION_NON_ARR(INFECTION_ARR_FILE);
-    if(!INFECTION_NON_ARR.is_open()){
+    if(!INFECTION_NON_ARR.is_open()) {
         cout<<"FILE_INFECTION_NON_ARR_OPEN_ERROR"<<endl;
         exit(-1);
     }
     auto infection_start_time = std::chrono::steady_clock::now();   //开始时间
-    for(int i=0;i<BLOCK_X;++i){     //X方向的第i个块
-        for(int j=0;j<BLOCK_Y;++j){ //Y方向的第j个块
+    for(int i=0;i<BLOCK_X;++i) {     //X方向的第i个块
+        for(int j=0;j<BLOCK_Y;++j) { //Y方向的第j个块
             //2.1计算该分块的左上角和右下角的行y列x值
             int left_up_x = i*BLOCKYSIZE;   //左上x
             int left_up_y = j*BLOCKXSIZE;   //左上y
@@ -110,8 +117,8 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
         }
     }
     auto infection_end_time = std::chrono::steady_clock::now();     //结束时间
-    for(int i = 0;i < arr.size();i++){
-        for(int j = 0;j < arr[0].size();j++){
+    for(int i = 0;i < arr.size();i++) {
+        for(int j = 0;j < arr[0].size();j++) {
             INFECTION_NON_ARR<<arr[i][j]<<"\t";      //写入文件
         }
         INFECTION_NON_ARR<<endl;                     //换行
@@ -120,15 +127,15 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     INFECTION_NON_TIME = (std::chrono::duration_cast<std::chrono::milliseconds>(infection_end_time-infection_start_time)).count();
     
     //3.从起点开始对每个块做递归infection
-    INFECTION_ARR_FILE = "./INFECTION_ARR_"+std::to_string(TIMES)+".txt";   //保存非递归结果
+    INFECTION_ARR_FILE = "./INFECTION_ARR_"+std::to_string(TIMES)+".txt";   //保存非递归结果到文件
     std::ofstream INFECTION_ARR(INFECTION_ARR_FILE);
-    if(!INFECTION_ARR.is_open()){
+    if(!INFECTION_ARR.is_open()) {
         cout<<"FILE_INFECTION_NON_ARR_OPEN_ERROR"<<endl;
         exit(-1);
     }
     infection_start_time = std::chrono::steady_clock::now();   //开始时间
-    for(int i=0;i<BLOCK_X;++i){     //X方向的第i个块
-        for(int j=0;j<BLOCK_Y;++j){ //Y方向的第j个块
+    for(int i=0;i<BLOCK_X;++i) {     //X方向的第i个块
+        for(int j=0;j<BLOCK_Y;++j) { //Y方向的第j个块
             //2.1计算该分块的左上角和右下角的行y列x值
             int left_up_x = i*BLOCKYSIZE;   //左上x
             int left_up_y = j*BLOCKXSIZE;   //左上y
@@ -141,8 +148,8 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
         }
     }
     infection_end_time = std::chrono::steady_clock::now();     //结束时间
-    for(int i = 0;i < arr.size();i++){
-        for(int j = 0;j < arr[0].size();j++){
+    for(int i = 0;i < arr.size();i++) {
+        for(int j = 0;j < arr[0].size();j++) {
             INFECTION_ARR<<arr[i][j]<<"\t";      //写入文件
         }
         INFECTION_ARR<<endl;                     //换行
@@ -161,7 +168,4 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
 
     return true;
 }
-
-
-
 
