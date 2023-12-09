@@ -23,25 +23,26 @@ std::string BLOCK_INFO_FILE = "./BLOCK_INFO_"+std::to_string(TIMES)+".txt"; //用
 std::vector<std::vector<int>> ROAD_XY;    //记录最后回溯的路径xy坐标
 std::string TIME_FILE = "./TIME_"+std::to_string(TIMES)+".txt"; //用来记录时间
 
+std::string tmpFile = "./tmp.txt";
+//打开tmpFile
+std::ofstream TMP(tmpFile);
+
+
 bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY,int x,int y) {//递归感染
-    if(x < LeftUpX || x > RightDownX || y < LeftUpY || y > RightDownY)return false;  //越界直接返回false
-    if(arr[x][y] == INT_MAX){
-        cout<<"走到终点:"<<endl;
-        cout<<"LeftUpX = "<<LeftUpX<<",LeftUpY = "<<LeftUpY<<",RightDownX = "<<RightDownX<<",RightDownY = "<<RightDownY<<endl;
-    }
-    if(arr[x][y] != 0 && arr[x][y] != INT_MAX && arr[x][y] != INT_MIN)return false;  //非通路直接返回false
-    if(arr[x][y] == INT_MAX) return true;   //走到终点,返回true
-    // if(arr[x][y] == INT_MIN) return false;  //走回起点,返回false
-    //计算曼哈顿距离
-    if(arr[x][y]!=INT_MIN)arr[x][y] = abs(x - SX) + abs(y - SY);            //不是起点时
+    if(x<LeftUpX || x>RightDownX || y<LeftUpY || y>RightDownY)return false; //越界错
+    if(arr[x][y]>0 && arr[x][y] != INT_MAX)return false;                    //已经被感染
+    if(arr[x][y] == INT_MAX)return true;    //走到终点，返回true
+    //非起点则计算曼哈顿距离
+    
+    if(arr[x][y]!=INT_MIN)arr[x][y] = abs(x - SX) + abs(y - SY);
     bool right = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x+1,y);//向右
-    if (right)return true;  //走到终点就结束
+    // if (right)return true;  //走到终点就结束
     bool down = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x,y+1); //向下
-    if(down) return true;   //走到终点就结束
+    // if(down) return true;   //走到终点就结束
     bool left = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x-1,y); //向左
-    if(left) return true;   //走到终点就结束
+    // if(left) return true;   //走到终点就结束
     bool up = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x,y-1);   //向上
-    return up?true:false;   //走到终点就结束,否则返回false
+    return up||right||down||left?true:false;   //走到终点就结束,否则返回false
 }
 
 bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY) {    //非递归感染
@@ -64,24 +65,25 @@ void Feedback(std::vector<std::vector<int>>&arr) {  //回溯
         XY.push_back(j);
         dir = -1;           //初始化方向
         int min = arr[i][j];    //当前值做最小值
+        arr[i][j] = -2;          //标记已经访问
         //开始找4个方向的最小值，并修改方向
         if(i+1<arr[0].size()){  //向右走
-            if(arr[i+1][j] < min) { //更小的值
+            if(arr[i+1][j] < min && arr[i+1][j] != -2) { //更小的值且未被访问过
                 min = arr[i+1][j];
                 dir = 0;
             }
         }else if(i-1>=0){       //向左走
-            if(arr[i-1][j] < min) {
+            if(arr[i-1][j] < min && arr[i-1][j] != -2) {
                 min = arr[i-1][j];
                 dir = 2;
             }
         }else if(j+1<arr.size()){   //向下走
-            if(arr[i][j+1] < min) {
+            if(arr[i][j+1] < min && arr[i][j+1] != -2) {
                 min = arr[i][j+1];
                 dir = 1;
             }
         }else if(j-1>=0){       //向上走
-            if(arr[i][j-1] < min) {
+            if(arr[i][j-1] < min && arr[i][j-1] != -2) {
                 min = arr[i][j-1];
                 dir = 3;
             }
@@ -123,7 +125,7 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     }
     INIT_ARR.close();
     bool isFinally = false;     //标记是否能走到终点
-    
+
     //1.分块
     cout<<"f:Lee_1.开始第"<<count+1<<"个矩阵的分块...\n";
     BLOCK_X = BLOCK_Y = 1;  //初始化为1
@@ -177,7 +179,7 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     
     //3.从起点开始对每个块做递归infection
     cout<<"f:Lee_3.开始第"<<count+1<<"个矩阵的递归infection...\n";
-    INFECTION_ARR_FILE = "./4_INFECTION_ARR_"+std::to_string(TIMES)+".txt";   //保存非递归结果到文件
+    INFECTION_ARR_FILE = "./4_INFECTION_ARR_"+std::to_string(TIMES)+".txt";   //保存递归结果到文件
     std::ofstream INFECTION_ARR(INFECTION_ARR_FILE);
     if(!INFECTION_ARR.is_open()) {
         cout<<"FILE_INFECTION_NON_ARR_OPEN_ERROR"<<endl;
@@ -191,17 +193,17 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
             int left_up_y = j*BLOCKXSIZE;   //左上y
             int right_down_x = (i+1)*BLOCKYSIZE-1;  //右下x
             int right_down_y = (j+1)*BLOCKXSIZE-1;  //右下y
-            right_down_x = right_down_x>=arr[0].size()?arr[0].size()-1:right_down_x;
-            right_down_y = right_down_y>=arr.size()?arr.size()-1:right_down_y;
+            right_down_x = right_down_x>=tmp[0].size()?tmp[0].size()-1:right_down_x;
+            right_down_y = right_down_y>=tmp.size()?tmp.size()-1:right_down_y;
             //2.2对该分块做infection
-            cout<<"第"<<count+1<<"个矩阵的LUX="<<left_up_x<<",LUY="<<left_up_y<<",RDX="<<right_down_x<<",RDY="<<right_down_y<<endl;
-            if(infection(arr,left_up_x,left_up_y,right_down_x,right_down_y,left_up_x,left_up_y)) isFinally = true;   //递归感染
+            // cout<<"第"<<count+1<<"个矩阵的LUX="<<left_up_x<<",LUY="<<left_up_y<<",RDX="<<right_down_x<<",RDY="<<right_down_y<<endl;
+            if(infection(tmp,left_up_x,left_up_y,right_down_x,right_down_y,left_up_x,left_up_y)) isFinally = true;   //递归感染
         }
     }
     infection_end_time = std::chrono::steady_clock::now();     //结束时间
-    for(int i = 0;i < arr.size();i++) {
-        for(int j = 0;j < arr[0].size();j++) {
-            INFECTION_ARR<<arr[i][j]<<"\t";      //写入文件
+    for(int i = 0;i < tmp.size();i++) {
+        for(int j = 0;j < tmp[0].size();j++) {
+            INFECTION_ARR<<tmp[i][j]<<"\t";      //写入文件
         }
         INFECTION_ARR<<endl;                     //换行
     }
@@ -212,7 +214,7 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     //4.回溯
     cout<<"f:Lee_4.开始第"<<count+1<<"个矩阵的回溯...\n";
     auto feedback_time = std::chrono::steady_clock::now();   //开始时间
-    if(isFinally) Feedback(arr);
+    if(isFinally) Feedback(tmp);
     else cout<<"没有找到通路..."<<endl;
     auto feedback_end_time = std::chrono::steady_clock::now();     //结束时间
     FEEDBACK_TIME = (std::chrono::duration_cast<std::chrono::nanoseconds>(feedback_end_time-feedback_time)).count();
@@ -227,9 +229,9 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
             cout<<"FILE_FEEDBACK_ARR_OPEN_ERROR"<<endl;
             exit(-1);
         }
-        for(int i = 0;i < arr.size();i++) {
-            for(int j = 0;j < arr[0].size();j++) {
-                FEEDBACK_ARR<<arr[i][j]<<"\t";      //写入文件
+        for(int i = 0;i < tmp.size();i++) {
+            for(int j = 0;j < tmp[0].size();j++) {
+                FEEDBACK_ARR<<tmp[i][j]<<"\t";      //写入文件
             }
             FEEDBACK_ARR<<endl;                     //换行
         }
@@ -253,11 +255,12 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
         cout<<"FILE_TIME_OPEN_ERROR"<<endl;
         exit(-1);
     }
-    TIME<<"INFECTION_TIME: "<<INFECTION_TIME<<"μs"<<endl;
-    TIME<<"FEEDBACK_TIME: "<<FEEDBACK_TIME<<"μs"<<endl;
-    TIME<<"TOTAL_TIME: "<<INFECTION_TIME+FEEDBACK_TIME<<"μs"<<endl;
+    TIME<<"INFECTION_TIME: "<<INFECTION_TIME<<"ns"<<endl;
+    TIME<<"FEEDBACK_TIME: "<<FEEDBACK_TIME<<"ns"<<endl;
+    TIME<<"TOTAL_TIME: "<<INFECTION_TIME+FEEDBACK_TIME<<"ns"<<endl;
     TIME.close();
     cout<<"f:Lee_5.结束第"<<count+1<<"个矩阵的记录...\n";
+    TMP.close();
     return true;
 }
 

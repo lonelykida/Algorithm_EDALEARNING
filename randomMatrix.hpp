@@ -96,7 +96,7 @@ void randomMatrixCreate() { //生成随机矩阵
     //起终点数值设置
     for(int i = 0;i < n;i++){
         MATRIX[i][STARTANDEND[i][0]][STARTANDEND[i][1]] = INT_MIN;  //起点设置最小值
-        MATRIX[i][STARTANDEND[i][2]][STARTANDEND[i][3]] = INT_MAX;  //重点设置最大值
+        MATRIX[i][STARTANDEND[i][2]][STARTANDEND[i][3]] = INT_MAX;  //终点设置最大值
     }
     //2.2.障碍生成
     //先构建随机数环境
