@@ -13,5 +13,8 @@
 #include <string>
 #include <chrono>
 #include <fstream>
+#include <random>
 
 using std::cout,std::cin,std::endl;
+
+int CreationTimes = 0;      //已经生成的矩阵数
