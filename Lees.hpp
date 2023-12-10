@@ -21,16 +21,16 @@ std::string FEEDBACK_ARR_FILE = "./FEEDBACK_ARR_"  +std::to_string(TIMES)+".txt"
 std::string ROAD_FILE = "./ROAD_"+std::to_string(TIMES)+".txt";         //用来记录最后回溯的路径
 std::string BLOCK_INFO_FILE = "./BLOCK_INFO_"+std::to_string(TIMES)+".txt"; //用来记录分块信息
 std::vector<std::vector<int>> ROAD_XY;    //记录最后回溯的路径xy坐标
+std::vector<std::vector<int>> TMP_XY;     //记录坐标临时信息-FeedBack用
 std::string TIME_FILE = "./TIME_"+std::to_string(TIMES)+".txt"; //用来记录时间
 
-std::string tmpFile = "./tmp.txt";
-//打开tmpFile
-std::ofstream TMP(tmpFile);
+
 
 
 bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY,int x,int y) {//递归感染
     if(x<LeftUpX || x>RightDownX || y<LeftUpY || y>RightDownY)return false; //越界错
     if(arr[x][y]>0 && arr[x][y] != INT_MAX)return false;                    //已经被感染
+    if(arr[x][y] == -1)return false;        //障碍
     if(arr[x][y] == INT_MAX)return true;    //走到终点，返回true
     //非起点则计算曼哈顿距离
     
@@ -57,49 +57,70 @@ bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int Rig
 }
 
 void Feedback(std::vector<std::vector<int>>&arr) {  //回溯
-    int i = EX,j = EY;  //从终点开始 - 找值最小的点走
-    int dir = -1;   //方向，-1表示没有路径，0表示向右，1表示向下，2表示向左，3表示向上
-    std::vector<int>XY; //存放路径的XY坐标，格式:[x1][y1][x2][y2]...
-    while(i != SX || j != SY) {
-        XY.push_back(i);    //i,j记录路径
-        XY.push_back(j);
-        dir = -1;           //初始化方向
-        int min = arr[i][j];    //当前值做最小值
-        arr[i][j] = -2;          //标记已经访问
-        //开始找4个方向的最小值，并修改方向
-        if(i+1<arr[0].size()){  //向右走
-            if(arr[i+1][j] < min && arr[i+1][j] != -2) { //更小的值且未被访问过
-                min = arr[i+1][j];
+    TMP_XY.clear();     //清理空间
+    std::vector<int>x,y;
+    int i = EX,j = EY;  //从终点开始
+    int min = arr[i][j];
+    int dir = -1;   //置方向位
+    while((i != SX && j != SY)) {
+        arr[i][j] = -2; //置访问位
+        //2.找上下左右的方向dir
+        if(i-1 >=0) {  //上
+            if(arr[i-1][j] < min && arr[i-1][j] != -1 && arr[i-1][j] != -2) {
+                min = arr[i-1][j];
                 dir = 0;
             }
-        }else if(i-1>=0){       //向左走
-            if(arr[i-1][j] < min && arr[i-1][j] != -2) {
-                min = arr[i-1][j];
-                dir = 2;
-            }
-        }else if(j+1<arr.size()){   //向下走
-            if(arr[i][j+1] < min && arr[i][j+1] != -2) {
-                min = arr[i][j+1];
+        }
+        if(j-1 >= 0) {  //左
+            if(arr[i][j-1] < min && arr[i][j-1] != -1 && arr[i][j-1] != -2) {
+                min = arr[i][j-1];
                 dir = 1;
             }
-        }else if(j-1>=0){       //向上走
-            if(arr[i][j-1] < min && arr[i][j-1] != -2) {
-                min = arr[i][j-1];
+        }
+        if(i+1 < arr.size()) {  //下
+            if(arr[i+1][j] < min && arr[i+1][j] != -1 && arr[i+1][j] != -2) {
+                min = arr[i+1][j];
+                dir = 2;
+            }
+        }
+        if(j+1 < arr[0].size()) {  //右
+            if(arr[i][j+1] < min && arr[i][j+1] != -1 && arr[i][j+1] != -2) {
+                min = arr[i][j+1];
                 dir = 3;
             }
         }
-        //修改方向
-        if(dir == -1) break;    //无路径，结束
-        else if(dir == 0) i++;  //向右走
-        else if(dir == 1) j++;  //向下走
-        else if(dir == 2) i--;  //向左走
-        else if(dir == 3) j--;  //向上走
+        //3.根据dir修改当前走向
+        if(dir!=-1){    //找到方向
+            x.push_back(i);
+            y.push_back(j);
+            switch(dir) {
+                case 0:
+                    i--;
+                    break;
+                case 1:
+                    j--;
+                    break;
+                case 2:
+                    i++;
+                    break;
+                case 3:
+                    j++;
+                    break;
+            }
+        }else{          //未找到方向
+            if(x.empty()){
+                cout<<"XY坐标栈空,未找到回溯路径!\n";
+                break;
+            }
+            i = x.back();
+            j = y.back();
+            x.pop_back();
+            y.pop_back();
+        }
+        dir = -1;       //初始化dir
     }
-    if(dir != -1){      //说明走到起点
-        XY.push_back(SX);
-        XY.push_back(SY);
-    }
-    ROAD_XY.push_back(XY);
+    TMP_XY.push_back(x);
+    TMP_XY.push_back(y);
 }
 
 bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey) {  //count用于表示这是第几个矩阵
@@ -116,9 +137,17 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
         exit(-1);
     }
     std::vector<std::vector<int>>tmp(arr.size(),std::vector<int>(arr[0].size(),0));
+    INIT_ARR<<"tmp矩阵:"<<endl;
+    for(int i = 0;i < tmp.size();i++) {
+        for(int j = 0;j < tmp[0].size();j++) {
+            tmp[i][j] = arr[i][j];
+            INIT_ARR<<tmp[i][j]<<"\t";      //写入文件
+        }
+        INIT_ARR<<endl;                     //换行
+    }
+    INIT_ARR<<"\narr矩阵:"<<endl;
     for(int i = 0;i < arr.size();i++) {
         for(int j = 0;j < arr[0].size();j++) {
-            tmp[i][j] = arr[i][j];
             INIT_ARR<<tmp[i][j]<<"\t";      //写入文件
         }
         INIT_ARR<<endl;                     //换行
@@ -222,6 +251,7 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     
     //5.将所有中间结果记录到文件中
     cout<<"f:Lee_5.开始第"<<count+1<<"个矩阵的记录...\n";
+    cout<<"f:Lee_5.1.开始记录回溯矩阵...\n";
     FEEDBACK_ARR_FILE = "./5_FEEDBACK_ARR_"  +std::to_string(TIMES)+".txt";   //记录回溯矩阵的文件
     std::ofstream FEEDBACK_ARR(FEEDBACK_ARR_FILE);
     if(isFinally){
@@ -237,18 +267,25 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
         }
     }else FEEDBACK_ARR<<"未找到通路...\n";
     FEEDBACK_ARR.close();
+    cout<<"f:Lee_5.1.结束记录回溯矩阵...\n";
+    cout<<"f:Lee_5.2.开始记录回溯路径...\n";
     ROAD_FILE = "./6_ROAD_"+std::to_string(TIMES)+".txt";   //记录回溯路径的文件
+    
+    cout<<endl;
     std::ofstream ROAD(ROAD_FILE);
     if(isFinally){
         if(!ROAD.is_open()) {
             cout<<"FILE_FEEDBACK_ARR_OPEN_ERROR"<<endl;
             exit(-1);
         }
-        for(int i = 0;i < ROAD_XY[0].size();i++) 
-            ROAD<<"("<<ROAD_XY[0][i]<<","<<ROAD_XY[1][i]<<")"<<endl;
-        ROAD<<"一共走了"<<ROAD_XY[0].size()<<"步"<<endl;
+        for(int i = 0;i < ROAD_XY[count].size();i+=2) 
+            ROAD<<"("<<ROAD_XY[count][i]<<","<<ROAD_XY[count][i+1]<<")"<<endl;
+        ROAD<<"一共走了"<<ROAD_XY[count].size()<<"步"<<endl;
     }else ROAD<<"未找到通路...\n";
+    cout<<"输出完成\n";
     ROAD.close();
+    cout<<"f:Lee_5.2.结束记录回溯路径...\n";
+    cout<<"f:Lee_5.3.开始记录时间...\n";
     TIME_FILE = "./7_TIME_"+std::to_string(TIMES)+".txt"; //记录时间的文件
     std::ofstream TIME(TIME_FILE);
     if(!TIME.is_open()) {
@@ -259,8 +296,8 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     TIME<<"FEEDBACK_TIME: "<<FEEDBACK_TIME<<"ns"<<endl;
     TIME<<"TOTAL_TIME: "<<INFECTION_TIME+FEEDBACK_TIME<<"ns"<<endl;
     TIME.close();
+    cout<<"f:Lee_5.3.结束记录时间...\n";
     cout<<"f:Lee_5.结束第"<<count+1<<"个矩阵的记录...\n";
-    TMP.close();
     return true;
 }
 
