@@ -116,6 +116,7 @@ void Feedback(std::vector<std::vector<int>>&arr) {  //ªÿÀ›
             j = y.back();
             x.pop_back();
             y.pop_back();
+            min = INT_MAX;
         }
         dir = -1;       //≥ı ºªØdir
     }
