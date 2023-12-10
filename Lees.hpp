@@ -119,6 +119,10 @@ void Feedback(std::vector<std::vector<int>>&arr) {  //ªÿÀ›
         }
         dir = -1;       //≥ı ºªØdir
     }
+    if(!x.empty()){
+        x.push_back(SX);
+        y.push_back(SY);
+    }
     TMP_XY.push_back(x);
     TMP_XY.push_back(y);
 }
@@ -273,6 +277,12 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     
     cout<<endl;
     std::ofstream ROAD(ROAD_FILE);
+    std::vector<int>tmpxy;
+    for(int i = 0;i < TMP_XY[0].size();i++){
+        tmpxy.push_back(TMP_XY[0][i]);
+        tmpxy.push_back(TMP_XY[1][i]);
+    }
+    ROAD_XY.push_back(tmpxy);
     if(isFinally){
         if(!ROAD.is_open()) {
             cout<<"FILE_FEEDBACK_ARR_OPEN_ERROR"<<endl;
