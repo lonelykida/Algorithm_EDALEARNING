@@ -25,24 +25,17 @@ std::vector<std::vector<int>> TMP_XY;     //记录坐标临时信息-FeedBack用
 std::string TIME_FILE = "./TIME_"+std::to_string(TIMES)+".txt"; //用来记录时间
 
 
-
-
 bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY,int x,int y) {//递归感染
-    if(x<LeftUpX || x>RightDownX || y<LeftUpY || y>RightDownY)return false; //越界错
-    if(arr[x][y]>0 && arr[x][y] != INT_MAX)return false;                    //已经被感染
-    if(arr[x][y] == -1)return false;        //障碍
-    if(arr[x][y] == INT_MAX)return true;    //走到终点，返回true
-    //非起点则计算曼哈顿距离
-    
-    if(arr[x][y]!=INT_MIN)arr[x][y] = abs(x - SX) + abs(y - SY);
-    bool right = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x+1,y);//向右
-    // if (right)return true;  //走到终点就结束
-    bool down = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x,y+1); //向下
-    // if(down) return true;   //走到终点就结束
-    bool left = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x-1,y); //向左
-    // if(left) return true;   //走到终点就结束
-    bool up = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x,y-1);   //向上
-    return up||right||down||left?true:false;   //走到终点就结束,否则返回false
+    if(x<LeftUpX || x > RightDownX || y < LeftUpY  || y > RightDownY)return true;  //越界错
+    if(arr[x][y]!=0 && arr[x][y] != INT_MAX && arr[x][y] != INT_MIN)return true;       //非通路且非终点
+    if(arr[x][y] == INT_MAX)return true;        //走到终点
+    if(arr[x][y] != INT_MIN) arr[x][y] = abs(x-SX)+abs(y-SY);
+    bool up = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x-1,y); //上
+    bool down = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x+1,y); //下
+    bool left = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x,y-1); //左
+    bool right = infection(arr,LeftUpX,LeftUpY,RightDownX,RightDownY,x,y+1); //右
+    // return (left||right||up||down)?true:true;
+    return true;
 }
 
 bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int RightDownX,int RightDownY) {    //非递归感染
@@ -57,40 +50,45 @@ bool infection(std::vector<std::vector<int>>&arr,int LeftUpX,int LeftUpY,int Rig
 }
 
 void Feedback(std::vector<std::vector<int>>&arr) {  //回溯
+    std::ofstream tmpxy("./000_TMP.txt");
     TMP_XY.clear();     //清理空间
     std::vector<int>x,y;
     int i = EX,j = EY;  //从终点开始
     int min = arr[i][j];
     int dir = -1;   //置方向位
-    while((i != SX && j != SY)) {
+    while((i != SX && j != SY) || (i == SX && j != SY) || (i != SX && j == SY)) {
+        tmpxy<<"i = "<<i<<" j = "<<j<<endl;
+        tmpxy<<"min = "<<min<<endl;
         arr[i][j] = -2; //置访问位
         //2.找上下左右的方向dir
-        if(i-1 >=0) {  //上
-            if(arr[i-1][j] < min && arr[i-1][j] != -1 && arr[i-1][j] != -2) {
+        if(i-1 >=0 && arr[i-1][j] < min) {  //上
+            if(arr[i-1][j] != 0 && arr[i-1][j] != -1 && arr[i-1][j] != -2) {
                 min = arr[i-1][j];
                 dir = 0;
             }
         }
-        if(j-1 >= 0) {  //左
-            if(arr[i][j-1] < min && arr[i][j-1] != -1 && arr[i][j-1] != -2) {
+        if(j-1 >= 0 && arr[i][j-1] < min) {  //左
+            if(arr[i][j-1] != 0 && arr[i][j-1] != -1 && arr[i][j-1] != -2) {
                 min = arr[i][j-1];
                 dir = 1;
             }
         }
-        if(i+1 < arr.size()) {  //下
-            if(arr[i+1][j] < min && arr[i+1][j] != -1 && arr[i+1][j] != -2) {
+        if(i+1 < arr.size() && arr[i+1][j] < min) {  //下
+            if(arr[i+1][j] != 0 && arr[i+1][j] != -1 && arr[i+1][j] != -2) {
                 min = arr[i+1][j];
                 dir = 2;
             }
         }
-        if(j+1 < arr[0].size()) {  //右
-            if(arr[i][j+1] < min && arr[i][j+1] != -1 && arr[i][j+1] != -2) {
+        if(j+1 < arr[0].size() && arr[i][j+1] < min) {  //右
+            if(arr[i][j+1] != 0 && arr[i][j+1] != -1 && arr[i][j+1] != -2) {
                 min = arr[i][j+1];
                 dir = 3;
             }
         }
+        tmpxy<<"dir = "<<dir<<endl;
         //3.根据dir修改当前走向
         if(dir!=-1){    //找到方向
+            tmpxy<<"findpath_x="<<i<<" findpath_y="<<j<<endl;
             x.push_back(i);
             y.push_back(j);
             switch(dir) {
@@ -108,6 +106,7 @@ void Feedback(std::vector<std::vector<int>>&arr) {  //回溯
                     break;
             }
         }else{          //未找到方向
+            tmpxy<<"nofindpath_x="<<i<<" nofindpath_y="<<j<<endl;
             if(x.empty()){
                 cout<<"XY坐标栈空,未找到回溯路径!\n";
                 break;
@@ -116,6 +115,7 @@ void Feedback(std::vector<std::vector<int>>&arr) {  //回溯
             j = y.back();
             x.pop_back();
             y.pop_back();
+            tmpxy<<"nowfindpath_x="<<i<<" nofindpath_y="<<j<<endl;
             min = INT_MAX;
         }
         dir = -1;       //初始化dir
@@ -126,6 +126,7 @@ void Feedback(std::vector<std::vector<int>>&arr) {  //回溯
     }
     TMP_XY.push_back(x);
     TMP_XY.push_back(y);
+    tmpxy.close();
 }
 
 bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey) {  //count用于表示这是第几个矩阵
@@ -134,6 +135,7 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     EX = ex;
     EY = ey;
     TIMES = CreationTimes+count;  //更新矩阵计数
+    int X_BLK = BLOCK_X,Y_BLK = BLOCK_Y;
     //矩阵tmp用于执行递归的infection,顺带保存初始矩阵结果
     INIT_ARR_FILE = "./2_INIT_ARR_"+std::to_string(TIMES)+".txt"; //记录初始矩阵结果
     std::ofstream INIT_ARR(INIT_ARR_FILE);  //打开初始矩阵文件
@@ -164,9 +166,9 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     cout<<"f:Lee_1.开始第"<<count+1<<"个矩阵的分块...\n";
     BLOCK_X = BLOCK_Y = 1;  //初始化为1
     if(arr.size()<=BLOCKYSIZE)  BLOCK_Y = 1;            //Y方向分成1个块
-    else while(arr.size()/(++BLOCK_Y)>BLOCKYSIZE);      //找到合适的纵向分块数        
+    else while(arr.size()/(BLOCK_Y)>BLOCKYSIZE)BLOCK_Y++;      //找到合适的纵向分块数        
     if(arr[0].size()<=BLOCKXSIZE) BLOCK_X = 1;          //X方向分成1个块
-    else while(arr[0].size()/(++BLOCK_X)>BLOCKXSIZE);   //找到合适的横向分块数
+    else while(arr[0].size()/(BLOCK_X)>BLOCKXSIZE)BLOCK_X++;   //找到合适的横向分块数
     BLOCK_INFO_FILE = "./3_BLOCK_INFO_"+std::to_string(TIMES)+".txt"; //将分块信息写入文件
     std::ofstream BLOCK_INFO(BLOCK_INFO_FILE);
     if(!BLOCK_INFO.is_open()) {
@@ -175,6 +177,10 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     }
     BLOCK_INFO<<"X方向的分块数 = "<<BLOCK_X<<endl;
     BLOCK_INFO<<"Y方向的分块数 = "<<BLOCK_Y<<endl;
+    X_BLK = arr[0].size()/BLOCK_Y+9;   //X方向每个块的大小
+    Y_BLK = arr.size()/BLOCK_X+9;     //Y方向每个块的大小
+    BLOCK_INFO<<"X方向的每个块的大小 = "<<X_BLK<<endl;
+    BLOCK_INFO<<"Y方向的每个块的大小 = "<<Y_BLK<<endl;
     BLOCK_INFO.close();
     cout<<"f:Lee_1.第"<<count+1<<"个矩阵的分块结束...\n";
 
@@ -192,8 +198,8 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
             //2.1计算该分块的左上角和右下角的行y列x值
             int left_up_x = i*BLOCKYSIZE;   //左上x
             int left_up_y = j*BLOCKXSIZE;   //左上y
-            int right_down_x = (i+1)*BLOCKYSIZE-1;  //右下x
-            int right_down_y = (j+1)*BLOCKXSIZE-1;  //右下y
+            int right_down_x = (i+1)*BLOCKYSIZE;  //右下x
+            int right_down_y = (j+1)*BLOCKXSIZE;  //右下y
             right_down_x = right_down_x>=arr[0].size()?arr[0].size()-1:right_down_x;
             right_down_y = right_down_y>=arr.size()?arr.size()-1:right_down_y;
             //2.2对该分块做infection
@@ -223,14 +229,27 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
     for(int i=0;i<BLOCK_X;++i) {     //X方向的第i个块
         for(int j=0;j<BLOCK_Y;++j) { //Y方向的第j个块
             //2.1计算该分块的左上角和右下角的行y列x值
-            int left_up_x = i*BLOCKYSIZE;   //左上x
-            int left_up_y = j*BLOCKXSIZE;   //左上y
-            int right_down_x = (i+1)*BLOCKYSIZE-1;  //右下x
-            int right_down_y = (j+1)*BLOCKXSIZE-1;  //右下y
+            int left_up_x = j*Y_BLK;   //左上x
+            int left_up_y = i*X_BLK;   //左上y
+            int right_down_x = (j+1)*Y_BLK-1;  //右下x
+            int right_down_y = (i+1)*X_BLK-1;  //右下y
             right_down_x = right_down_x>=tmp[0].size()?tmp[0].size()-1:right_down_x;
             right_down_y = right_down_y>=tmp.size()?tmp.size()-1:right_down_y;
             //2.2对该分块做infection
-            // cout<<"第"<<count+1<<"个矩阵的LUX="<<left_up_x<<",LUY="<<left_up_y<<",RDX="<<right_down_x<<",RDY="<<right_down_y<<endl;
+            cout<<"第"<<count+1<<"个矩阵的LUX="<<left_up_x<<",LUY="<<left_up_y<<",RDX="<<right_down_x<<",RDY="<<right_down_y<<endl;
+            // 找第一个不是障碍的起始点
+            int xx = left_up_x,yy=left_up_y;
+            int t = 0;
+            while(tmp[xx][yy] == -1){
+                xx = left_up_x + t;
+                while(tmp[xx][yy] == -1 && xx<right_down_x) xx++;
+                if(tmp[xx][yy]!=-1)break;
+                else xx = left_up_x+t;
+                while(tmp[xx][yy] == -1 && yy<right_down_y) yy++;
+                if(tmp[xx][yy]!=-1)break;
+                else yy = left_up_y;
+                t++;
+            }
             if(infection(tmp,left_up_x,left_up_y,right_down_x,right_down_y,left_up_x,left_up_y)) isFinally = true;   //递归感染
         }
     }
@@ -291,9 +310,8 @@ bool Lee(std::vector<std::vector<int>>&arr,int count,int sx,int sy,int ex,int ey
         }
         for(int i = 0;i < ROAD_XY[count].size();i+=2) 
             ROAD<<"("<<ROAD_XY[count][i]<<","<<ROAD_XY[count][i+1]<<")"<<endl;
-        ROAD<<"一共走了"<<ROAD_XY[count].size()<<"步"<<endl;
+        ROAD<<"一共走了"<<ROAD_XY[count].size()/2<<"步"<<endl;
     }else ROAD<<"未找到通路...\n";
-    cout<<"输出完成\n";
     ROAD.close();
     cout<<"f:Lee_5.2.结束记录回溯路径...\n";
     cout<<"f:Lee_5.3.开始记录时间...\n";

@@ -1,0 +1,1746 @@
+i = 129 j = 129
+min = 2147483647
+dir = 0
+findpath_x=129 findpath_y=129
+i = 128 j = 129
+min = 257
+dir = 0
+findpath_x=128 findpath_y=129
+i = 127 j = 129
+min = 256
+dir = 0
+findpath_x=127 findpath_y=129
+i = 126 j = 129
+min = 255
+dir = 0
+findpath_x=126 findpath_y=129
+i = 125 j = 129
+min = 254
+dir = 0
+findpath_x=125 findpath_y=129
+i = 124 j = 129
+min = 253
+dir = 0
+findpath_x=124 findpath_y=129
+i = 123 j = 129
+min = 252
+dir = 0
+findpath_x=123 findpath_y=129
+i = 122 j = 129
+min = 251
+dir = 0
+findpath_x=122 findpath_y=129
+i = 121 j = 129
+min = 250
+dir = 0
+findpath_x=121 findpath_y=129
+i = 120 j = 129
+min = 249
+dir = 0
+findpath_x=120 findpath_y=129
+i = 119 j = 129
+min = 248
+dir = 0
+findpath_x=119 findpath_y=129
+i = 118 j = 129
+min = 247
+dir = 0
+findpath_x=118 findpath_y=129
+i = 117 j = 129
+min = 246
+dir = 0
+findpath_x=117 findpath_y=129
+i = 116 j = 129
+min = 245
+dir = 0
+findpath_x=116 findpath_y=129
+i = 115 j = 129
+min = 244
+dir = 0
+findpath_x=115 findpath_y=129
+i = 114 j = 129
+min = 243
+dir = 0
+findpath_x=114 findpath_y=129
+i = 113 j = 129
+min = 242
+dir = 0
+findpath_x=113 findpath_y=129
+i = 112 j = 129
+min = 241
+dir = 0
+findpath_x=112 findpath_y=129
+i = 111 j = 129
+min = 240
+dir = 0
+findpath_x=111 findpath_y=129
+i = 110 j = 129
+min = 239
+dir = 0
+findpath_x=110 findpath_y=129
+i = 109 j = 129
+min = 238
+dir = 0
+findpath_x=109 findpath_y=129
+i = 108 j = 129
+min = 237
+dir = 0
+findpath_x=108 findpath_y=129
+i = 107 j = 129
+min = 236
+dir = 0
+findpath_x=107 findpath_y=129
+i = 106 j = 129
+min = 235
+dir = 0
+findpath_x=106 findpath_y=129
+i = 105 j = 129
+min = 234
+dir = 0
+findpath_x=105 findpath_y=129
+i = 104 j = 129
+min = 233
+dir = 1
+findpath_x=104 findpath_y=129
+i = 104 j = 128
+min = 232
+dir = 1
+findpath_x=104 findpath_y=128
+i = 104 j = 127
+min = 231
+dir = 1
+findpath_x=104 findpath_y=127
+i = 104 j = 126
+min = 230
+dir = 1
+findpath_x=104 findpath_y=126
+i = 104 j = 125
+min = 229
+dir = 1
+findpath_x=104 findpath_y=125
+i = 104 j = 124
+min = 228
+dir = 1
+findpath_x=104 findpath_y=124
+i = 104 j = 123
+min = 227
+dir = 1
+findpath_x=104 findpath_y=123
+i = 104 j = 122
+min = 226
+dir = 1
+findpath_x=104 findpath_y=122
+i = 104 j = 121
+min = 225
+dir = 1
+findpath_x=104 findpath_y=121
+i = 104 j = 120
+min = 224
+dir = 1
+findpath_x=104 findpath_y=120
+i = 104 j = 119
+min = 223
+dir = 1
+findpath_x=104 findpath_y=119
+i = 104 j = 118
+min = 222
+dir = 1
+findpath_x=104 findpath_y=118
+i = 104 j = 117
+min = 221
+dir = 1
+findpath_x=104 findpath_y=117
+i = 104 j = 116
+min = 220
+dir = 1
+findpath_x=104 findpath_y=116
+i = 104 j = 115
+min = 219
+dir = 1
+findpath_x=104 findpath_y=115
+i = 104 j = 114
+min = 218
+dir = 1
+findpath_x=104 findpath_y=114
+i = 104 j = 113
+min = 217
+dir = 1
+findpath_x=104 findpath_y=113
+i = 104 j = 112
+min = 216
+dir = 1
+findpath_x=104 findpath_y=112
+i = 104 j = 111
+min = 215
+dir = 1
+findpath_x=104 findpath_y=111
+i = 104 j = 110
+min = 214
+dir = 1
+findpath_x=104 findpath_y=110
+i = 104 j = 109
+min = 213
+dir = 1
+findpath_x=104 findpath_y=109
+i = 104 j = 108
+min = 212
+dir = 1
+findpath_x=104 findpath_y=108
+i = 104 j = 107
+min = 211
+dir = 1
+findpath_x=104 findpath_y=107
+i = 104 j = 106
+min = 210
+dir = 1
+findpath_x=104 findpath_y=106
+i = 104 j = 105
+min = 209
+dir = 1
+findpath_x=104 findpath_y=105
+i = 104 j = 104
+min = 208
+dir = 1
+findpath_x=104 findpath_y=104
+i = 104 j = 103
+min = 207
+dir = 0
+findpath_x=104 findpath_y=103
+i = 103 j = 103
+min = 206
+dir = 0
+findpath_x=103 findpath_y=103
+i = 102 j = 103
+min = 205
+dir = 0
+findpath_x=102 findpath_y=103
+i = 101 j = 103
+min = 204
+dir = 0
+findpath_x=101 findpath_y=103
+i = 100 j = 103
+min = 203
+dir = 0
+findpath_x=100 findpath_y=103
+i = 99 j = 103
+min = 202
+dir = 0
+findpath_x=99 findpath_y=103
+i = 98 j = 103
+min = 201
+dir = 0
+findpath_x=98 findpath_y=103
+i = 97 j = 103
+min = 200
+dir = 0
+findpath_x=97 findpath_y=103
+i = 96 j = 103
+min = 199
+dir = 0
+findpath_x=96 findpath_y=103
+i = 95 j = 103
+min = 198
+dir = 0
+findpath_x=95 findpath_y=103
+i = 94 j = 103
+min = 197
+dir = 0
+findpath_x=94 findpath_y=103
+i = 93 j = 103
+min = 196
+dir = 0
+findpath_x=93 findpath_y=103
+i = 92 j = 103
+min = 195
+dir = 0
+findpath_x=92 findpath_y=103
+i = 91 j = 103
+min = 194
+dir = 0
+findpath_x=91 findpath_y=103
+i = 90 j = 103
+min = 193
+dir = 0
+findpath_x=90 findpath_y=103
+i = 89 j = 103
+min = 192
+dir = 0
+findpath_x=89 findpath_y=103
+i = 88 j = 103
+min = 191
+dir = 0
+findpath_x=88 findpath_y=103
+i = 87 j = 103
+min = 190
+dir = 0
+findpath_x=87 findpath_y=103
+i = 86 j = 103
+min = 189
+dir = 0
+findpath_x=86 findpath_y=103
+i = 85 j = 103
+min = 188
+dir = 0
+findpath_x=85 findpath_y=103
+i = 84 j = 103
+min = 187
+dir = 0
+findpath_x=84 findpath_y=103
+i = 83 j = 103
+min = 186
+dir = 1
+findpath_x=83 findpath_y=103
+i = 83 j = 102
+min = 185
+dir = 1
+findpath_x=83 findpath_y=102
+i = 83 j = 101
+min = 184
+dir = 1
+findpath_x=83 findpath_y=101
+i = 83 j = 100
+min = 183
+dir = 1
+findpath_x=83 findpath_y=100
+i = 83 j = 99
+min = 182
+dir = 1
+findpath_x=83 findpath_y=99
+i = 83 j = 98
+min = 181
+dir = 1
+findpath_x=83 findpath_y=98
+i = 83 j = 97
+min = 180
+dir = 1
+findpath_x=83 findpath_y=97
+i = 83 j = 96
+min = 179
+dir = 1
+findpath_x=83 findpath_y=96
+i = 83 j = 95
+min = 178
+dir = 1
+findpath_x=83 findpath_y=95
+i = 83 j = 94
+min = 177
+dir = 1
+findpath_x=83 findpath_y=94
+i = 83 j = 93
+min = 176
+dir = 1
+findpath_x=83 findpath_y=93
+i = 83 j = 92
+min = 175
+dir = 1
+findpath_x=83 findpath_y=92
+i = 83 j = 91
+min = 174
+dir = 1
+findpath_x=83 findpath_y=91
+i = 83 j = 90
+min = 173
+dir = -1
+nofindpath_x=83 nofindpath_y=90
+nowfindpath_x=83 nofindpath_y=91
+i = 83 j = 91
+min = 2147483647
+dir = 2
+findpath_x=83 findpath_y=91
+i = 84 j = 91
+min = 175
+dir = 1
+findpath_x=84 findpath_y=91
+i = 84 j = 90
+min = 174
+dir = -1
+nofindpath_x=84 nofindpath_y=90
+nowfindpath_x=84 nofindpath_y=91
+i = 84 j = 91
+min = 2147483647
+dir = 2
+findpath_x=84 findpath_y=91
+i = 85 j = 91
+min = 176
+dir = 1
+findpath_x=85 findpath_y=91
+i = 85 j = 90
+min = 175
+dir = 1
+findpath_x=85 findpath_y=90
+i = 85 j = 89
+min = 174
+dir = 1
+findpath_x=85 findpath_y=89
+i = 85 j = 88
+min = 173
+dir = 0
+findpath_x=85 findpath_y=88
+i = 84 j = 88
+min = 172
+dir = 0
+findpath_x=84 findpath_y=88
+i = 83 j = 88
+min = 171
+dir = 1
+findpath_x=83 findpath_y=88
+i = 83 j = 87
+min = 170
+dir = 1
+findpath_x=83 findpath_y=87
+i = 83 j = 86
+min = 169
+dir = 0
+findpath_x=83 findpath_y=86
+i = 82 j = 86
+min = 168
+dir = 0
+findpath_x=82 findpath_y=86
+i = 81 j = 86
+min = 167
+dir = 0
+findpath_x=81 findpath_y=86
+i = 80 j = 86
+min = 166
+dir = 0
+findpath_x=80 findpath_y=86
+i = 79 j = 86
+min = 165
+dir = 0
+findpath_x=79 findpath_y=86
+i = 78 j = 86
+min = 164
+dir = 0
+findpath_x=78 findpath_y=86
+i = 77 j = 86
+min = 163
+dir = 0
+findpath_x=77 findpath_y=86
+i = 76 j = 86
+min = 162
+dir = 0
+findpath_x=76 findpath_y=86
+i = 75 j = 86
+min = 161
+dir = 0
+findpath_x=75 findpath_y=86
+i = 74 j = 86
+min = 160
+dir = 0
+findpath_x=74 findpath_y=86
+i = 73 j = 86
+min = 159
+dir = 0
+findpath_x=73 findpath_y=86
+i = 72 j = 86
+min = 158
+dir = 0
+findpath_x=72 findpath_y=86
+i = 71 j = 86
+min = 157
+dir = 0
+findpath_x=71 findpath_y=86
+i = 70 j = 86
+min = 156
+dir = 0
+findpath_x=70 findpath_y=86
+i = 69 j = 86
+min = 155
+dir = 0
+findpath_x=69 findpath_y=86
+i = 68 j = 86
+min = 154
+dir = 0
+findpath_x=68 findpath_y=86
+i = 67 j = 86
+min = 153
+dir = 0
+findpath_x=67 findpath_y=86
+i = 66 j = 86
+min = 152
+dir = 0
+findpath_x=66 findpath_y=86
+i = 65 j = 86
+min = 151
+dir = 0
+findpath_x=65 findpath_y=86
+i = 64 j = 86
+min = 150
+dir = 0
+findpath_x=64 findpath_y=86
+i = 63 j = 86
+min = 149
+dir = 0
+findpath_x=63 findpath_y=86
+i = 62 j = 86
+min = 148
+dir = 0
+findpath_x=62 findpath_y=86
+i = 61 j = 86
+min = 147
+dir = 0
+findpath_x=61 findpath_y=86
+i = 60 j = 86
+min = 146
+dir = 0
+findpath_x=60 findpath_y=86
+i = 59 j = 86
+min = 145
+dir = 0
+findpath_x=59 findpath_y=86
+i = 58 j = 86
+min = 144
+dir = 0
+findpath_x=58 findpath_y=86
+i = 57 j = 86
+min = 143
+dir = 0
+findpath_x=57 findpath_y=86
+i = 56 j = 86
+min = 142
+dir = 0
+findpath_x=56 findpath_y=86
+i = 55 j = 86
+min = 141
+dir = 0
+findpath_x=55 findpath_y=86
+i = 54 j = 86
+min = 140
+dir = 0
+findpath_x=54 findpath_y=86
+i = 53 j = 86
+min = 139
+dir = 0
+findpath_x=53 findpath_y=86
+i = 52 j = 86
+min = 138
+dir = 1
+findpath_x=52 findpath_y=86
+i = 52 j = 85
+min = 137
+dir = 1
+findpath_x=52 findpath_y=85
+i = 52 j = 84
+min = 136
+dir = 1
+findpath_x=52 findpath_y=84
+i = 52 j = 83
+min = 135
+dir = 1
+findpath_x=52 findpath_y=83
+i = 52 j = 82
+min = 134
+dir = 1
+findpath_x=52 findpath_y=82
+i = 52 j = 81
+min = 133
+dir = 1
+findpath_x=52 findpath_y=81
+i = 52 j = 80
+min = 132
+dir = 1
+findpath_x=52 findpath_y=80
+i = 52 j = 79
+min = 131
+dir = 1
+findpath_x=52 findpath_y=79
+i = 52 j = 78
+min = 130
+dir = 1
+findpath_x=52 findpath_y=78
+i = 52 j = 77
+min = 129
+dir = 1
+findpath_x=52 findpath_y=77
+i = 52 j = 76
+min = 128
+dir = 1
+findpath_x=52 findpath_y=76
+i = 52 j = 75
+min = 127
+dir = -1
+nofindpath_x=52 nofindpath_y=75
+nowfindpath_x=52 nofindpath_y=76
+i = 52 j = 76
+min = 2147483647
+dir = 2
+findpath_x=52 findpath_y=76
+i = 53 j = 76
+min = 129
+dir = 1
+findpath_x=53 findpath_y=76
+i = 53 j = 75
+min = 128
+dir = -1
+nofindpath_x=53 nofindpath_y=75
+nowfindpath_x=53 nofindpath_y=76
+i = 53 j = 76
+min = 2147483647
+dir = 2
+findpath_x=53 findpath_y=76
+i = 54 j = 76
+min = 130
+dir = 1
+findpath_x=54 findpath_y=76
+i = 54 j = 75
+min = 129
+dir = -1
+nofindpath_x=54 nofindpath_y=75
+nowfindpath_x=54 nofindpath_y=76
+i = 54 j = 76
+min = 2147483647
+dir = 2
+findpath_x=54 findpath_y=76
+i = 55 j = 76
+min = 131
+dir = 1
+findpath_x=55 findpath_y=76
+i = 55 j = 75
+min = 130
+dir = -1
+nofindpath_x=55 nofindpath_y=75
+nowfindpath_x=55 nofindpath_y=76
+i = 55 j = 76
+min = 2147483647
+dir = 2
+findpath_x=55 findpath_y=76
+i = 56 j = 76
+min = 132
+dir = 1
+findpath_x=56 findpath_y=76
+i = 56 j = 75
+min = 131
+dir = -1
+nofindpath_x=56 nofindpath_y=75
+nowfindpath_x=56 nofindpath_y=76
+i = 56 j = 76
+min = 2147483647
+dir = 2
+findpath_x=56 findpath_y=76
+i = 57 j = 76
+min = 133
+dir = 1
+findpath_x=57 findpath_y=76
+i = 57 j = 75
+min = 132
+dir = -1
+nofindpath_x=57 nofindpath_y=75
+nowfindpath_x=57 nofindpath_y=76
+i = 57 j = 76
+min = 2147483647
+dir = 2
+findpath_x=57 findpath_y=76
+i = 58 j = 76
+min = 134
+dir = 1
+findpath_x=58 findpath_y=76
+i = 58 j = 75
+min = 133
+dir = -1
+nofindpath_x=58 nofindpath_y=75
+nowfindpath_x=58 nofindpath_y=76
+i = 58 j = 76
+min = 2147483647
+dir = 2
+findpath_x=58 findpath_y=76
+i = 59 j = 76
+min = 135
+dir = 1
+findpath_x=59 findpath_y=76
+i = 59 j = 75
+min = 134
+dir = -1
+nofindpath_x=59 nofindpath_y=75
+nowfindpath_x=59 nofindpath_y=76
+i = 59 j = 76
+min = 2147483647
+dir = 2
+findpath_x=59 findpath_y=76
+i = 60 j = 76
+min = 136
+dir = 1
+findpath_x=60 findpath_y=76
+i = 60 j = 75
+min = 135
+dir = -1
+nofindpath_x=60 nofindpath_y=75
+nowfindpath_x=60 nofindpath_y=76
+i = 60 j = 76
+min = 2147483647
+dir = 2
+findpath_x=60 findpath_y=76
+i = 61 j = 76
+min = 137
+dir = 1
+findpath_x=61 findpath_y=76
+i = 61 j = 75
+min = 136
+dir = -1
+nofindpath_x=61 nofindpath_y=75
+nowfindpath_x=61 nofindpath_y=76
+i = 61 j = 76
+min = 2147483647
+dir = 2
+findpath_x=61 findpath_y=76
+i = 62 j = 76
+min = 138
+dir = 1
+findpath_x=62 findpath_y=76
+i = 62 j = 75
+min = 137
+dir = -1
+nofindpath_x=62 nofindpath_y=75
+nowfindpath_x=62 nofindpath_y=76
+i = 62 j = 76
+min = 2147483647
+dir = 2
+findpath_x=62 findpath_y=76
+i = 63 j = 76
+min = 139
+dir = 1
+findpath_x=63 findpath_y=76
+i = 63 j = 75
+min = 138
+dir = -1
+nofindpath_x=63 nofindpath_y=75
+nowfindpath_x=63 nofindpath_y=76
+i = 63 j = 76
+min = 2147483647
+dir = 2
+findpath_x=63 findpath_y=76
+i = 64 j = 76
+min = 140
+dir = 1
+findpath_x=64 findpath_y=76
+i = 64 j = 75
+min = 139
+dir = -1
+nofindpath_x=64 nofindpath_y=75
+nowfindpath_x=64 nofindpath_y=76
+i = 64 j = 76
+min = 2147483647
+dir = 2
+findpath_x=64 findpath_y=76
+i = 65 j = 76
+min = 141
+dir = 1
+findpath_x=65 findpath_y=76
+i = 65 j = 75
+min = 140
+dir = -1
+nofindpath_x=65 nofindpath_y=75
+nowfindpath_x=65 nofindpath_y=76
+i = 65 j = 76
+min = 2147483647
+dir = 2
+findpath_x=65 findpath_y=76
+i = 66 j = 76
+min = 142
+dir = 1
+findpath_x=66 findpath_y=76
+i = 66 j = 75
+min = 141
+dir = -1
+nofindpath_x=66 nofindpath_y=75
+nowfindpath_x=66 nofindpath_y=76
+i = 66 j = 76
+min = 2147483647
+dir = 2
+findpath_x=66 findpath_y=76
+i = 67 j = 76
+min = 143
+dir = 1
+findpath_x=67 findpath_y=76
+i = 67 j = 75
+min = 142
+dir = -1
+nofindpath_x=67 nofindpath_y=75
+nowfindpath_x=67 nofindpath_y=76
+i = 67 j = 76
+min = 2147483647
+dir = 2
+findpath_x=67 findpath_y=76
+i = 68 j = 76
+min = 144
+dir = 1
+findpath_x=68 findpath_y=76
+i = 68 j = 75
+min = 143
+dir = -1
+nofindpath_x=68 nofindpath_y=75
+nowfindpath_x=68 nofindpath_y=76
+i = 68 j = 76
+min = 2147483647
+dir = 2
+findpath_x=68 findpath_y=76
+i = 69 j = 76
+min = 145
+dir = 1
+findpath_x=69 findpath_y=76
+i = 69 j = 75
+min = 144
+dir = -1
+nofindpath_x=69 nofindpath_y=75
+nowfindpath_x=69 nofindpath_y=76
+i = 69 j = 76
+min = 2147483647
+dir = 2
+findpath_x=69 findpath_y=76
+i = 70 j = 76
+min = 146
+dir = 1
+findpath_x=70 findpath_y=76
+i = 70 j = 75
+min = 145
+dir = -1
+nofindpath_x=70 nofindpath_y=75
+nowfindpath_x=70 nofindpath_y=76
+i = 70 j = 76
+min = 2147483647
+dir = 2
+findpath_x=70 findpath_y=76
+i = 71 j = 76
+min = 147
+dir = 1
+findpath_x=71 findpath_y=76
+i = 71 j = 75
+min = 146
+dir = -1
+nofindpath_x=71 nofindpath_y=75
+nowfindpath_x=71 nofindpath_y=76
+i = 71 j = 76
+min = 2147483647
+dir = 2
+findpath_x=71 findpath_y=76
+i = 72 j = 76
+min = 148
+dir = 1
+findpath_x=72 findpath_y=76
+i = 72 j = 75
+min = 147
+dir = -1
+nofindpath_x=72 nofindpath_y=75
+nowfindpath_x=72 nofindpath_y=76
+i = 72 j = 76
+min = 2147483647
+dir = 2
+findpath_x=72 findpath_y=76
+i = 73 j = 76
+min = 149
+dir = 1
+findpath_x=73 findpath_y=76
+i = 73 j = 75
+min = 148
+dir = -1
+nofindpath_x=73 nofindpath_y=75
+nowfindpath_x=73 nofindpath_y=76
+i = 73 j = 76
+min = 2147483647
+dir = 2
+findpath_x=73 findpath_y=76
+i = 74 j = 76
+min = 150
+dir = 1
+findpath_x=74 findpath_y=76
+i = 74 j = 75
+min = 149
+dir = -1
+nofindpath_x=74 nofindpath_y=75
+nowfindpath_x=74 nofindpath_y=76
+i = 74 j = 76
+min = 2147483647
+dir = 2
+findpath_x=74 findpath_y=76
+i = 75 j = 76
+min = 151
+dir = 1
+findpath_x=75 findpath_y=76
+i = 75 j = 75
+min = 150
+dir = -1
+nofindpath_x=75 nofindpath_y=75
+nowfindpath_x=75 nofindpath_y=76
+i = 75 j = 76
+min = 2147483647
+dir = 2
+findpath_x=75 findpath_y=76
+i = 76 j = 76
+min = 152
+dir = 1
+findpath_x=76 findpath_y=76
+i = 76 j = 75
+min = 151
+dir = -1
+nofindpath_x=76 nofindpath_y=75
+nowfindpath_x=76 nofindpath_y=76
+i = 76 j = 76
+min = 2147483647
+dir = 2
+findpath_x=76 findpath_y=76
+i = 77 j = 76
+min = 153
+dir = 1
+findpath_x=77 findpath_y=76
+i = 77 j = 75
+min = 152
+dir = -1
+nofindpath_x=77 nofindpath_y=75
+nowfindpath_x=77 nofindpath_y=76
+i = 77 j = 76
+min = 2147483647
+dir = 2
+findpath_x=77 findpath_y=76
+i = 78 j = 76
+min = 154
+dir = 1
+findpath_x=78 findpath_y=76
+i = 78 j = 75
+min = 153
+dir = -1
+nofindpath_x=78 nofindpath_y=75
+nowfindpath_x=78 nofindpath_y=76
+i = 78 j = 76
+min = 2147483647
+dir = 2
+findpath_x=78 findpath_y=76
+i = 79 j = 76
+min = 155
+dir = 1
+findpath_x=79 findpath_y=76
+i = 79 j = 75
+min = 154
+dir = 1
+findpath_x=79 findpath_y=75
+i = 79 j = 74
+min = 153
+dir = -1
+nofindpath_x=79 nofindpath_y=74
+nowfindpath_x=79 nofindpath_y=75
+i = 79 j = 75
+min = 2147483647
+dir = 2
+findpath_x=79 findpath_y=75
+i = 80 j = 75
+min = 155
+dir = 1
+findpath_x=80 findpath_y=75
+i = 80 j = 74
+min = 154
+dir = -1
+nofindpath_x=80 nofindpath_y=74
+nowfindpath_x=80 nofindpath_y=75
+i = 80 j = 75
+min = 2147483647
+dir = 2
+findpath_x=80 findpath_y=75
+i = 81 j = 75
+min = 156
+dir = 1
+findpath_x=81 findpath_y=75
+i = 81 j = 74
+min = 155
+dir = -1
+nofindpath_x=81 nofindpath_y=74
+nowfindpath_x=81 nofindpath_y=75
+i = 81 j = 75
+min = 2147483647
+dir = 2
+findpath_x=81 findpath_y=75
+i = 82 j = 75
+min = 157
+dir = 1
+findpath_x=82 findpath_y=75
+i = 82 j = 74
+min = 156
+dir = -1
+nofindpath_x=82 nofindpath_y=74
+nowfindpath_x=82 nofindpath_y=75
+i = 82 j = 75
+min = 2147483647
+dir = 2
+findpath_x=82 findpath_y=75
+i = 83 j = 75
+min = 158
+dir = 1
+findpath_x=83 findpath_y=75
+i = 83 j = 74
+min = 157
+dir = -1
+nofindpath_x=83 nofindpath_y=74
+nowfindpath_x=83 nofindpath_y=75
+i = 83 j = 75
+min = 2147483647
+dir = 2
+findpath_x=83 findpath_y=75
+i = 84 j = 75
+min = 159
+dir = 1
+findpath_x=84 findpath_y=75
+i = 84 j = 74
+min = 158
+dir = -1
+nofindpath_x=84 nofindpath_y=74
+nowfindpath_x=84 nofindpath_y=75
+i = 84 j = 75
+min = 2147483647
+dir = 2
+findpath_x=84 findpath_y=75
+i = 85 j = 75
+min = 160
+dir = 1
+findpath_x=85 findpath_y=75
+i = 85 j = 74
+min = 159
+dir = -1
+nofindpath_x=85 nofindpath_y=74
+nowfindpath_x=85 nofindpath_y=75
+i = 85 j = 75
+min = 2147483647
+dir = 2
+findpath_x=85 findpath_y=75
+i = 86 j = 75
+min = 161
+dir = 1
+findpath_x=86 findpath_y=75
+i = 86 j = 74
+min = 160
+dir = -1
+nofindpath_x=86 nofindpath_y=74
+nowfindpath_x=86 nofindpath_y=75
+i = 86 j = 75
+min = 2147483647
+dir = 2
+findpath_x=86 findpath_y=75
+i = 87 j = 75
+min = 162
+dir = 1
+findpath_x=87 findpath_y=75
+i = 87 j = 74
+min = 161
+dir = -1
+nofindpath_x=87 nofindpath_y=74
+nowfindpath_x=87 nofindpath_y=75
+i = 87 j = 75
+min = 2147483647
+dir = 2
+findpath_x=87 findpath_y=75
+i = 88 j = 75
+min = 163
+dir = 1
+findpath_x=88 findpath_y=75
+i = 88 j = 74
+min = 162
+dir = -1
+nofindpath_x=88 nofindpath_y=74
+nowfindpath_x=88 nofindpath_y=75
+i = 88 j = 75
+min = 2147483647
+dir = 2
+findpath_x=88 findpath_y=75
+i = 89 j = 75
+min = 164
+dir = 1
+findpath_x=89 findpath_y=75
+i = 89 j = 74
+min = 163
+dir = -1
+nofindpath_x=89 nofindpath_y=74
+nowfindpath_x=89 nofindpath_y=75
+i = 89 j = 75
+min = 2147483647
+dir = 2
+findpath_x=89 findpath_y=75
+i = 90 j = 75
+min = 165
+dir = 1
+findpath_x=90 findpath_y=75
+i = 90 j = 74
+min = 164
+dir = -1
+nofindpath_x=90 nofindpath_y=74
+nowfindpath_x=90 nofindpath_y=75
+i = 90 j = 75
+min = 2147483647
+dir = 2
+findpath_x=90 findpath_y=75
+i = 91 j = 75
+min = 166
+dir = 1
+findpath_x=91 findpath_y=75
+i = 91 j = 74
+min = 165
+dir = -1
+nofindpath_x=91 nofindpath_y=74
+nowfindpath_x=91 nofindpath_y=75
+i = 91 j = 75
+min = 2147483647
+dir = 2
+findpath_x=91 findpath_y=75
+i = 92 j = 75
+min = 167
+dir = 1
+findpath_x=92 findpath_y=75
+i = 92 j = 74
+min = 166
+dir = 1
+findpath_x=92 findpath_y=74
+i = 92 j = 73
+min = 165
+dir = 1
+findpath_x=92 findpath_y=73
+i = 92 j = 72
+min = 164
+dir = 0
+findpath_x=92 findpath_y=72
+i = 91 j = 72
+min = 163
+dir = 0
+findpath_x=91 findpath_y=72
+i = 90 j = 72
+min = 162
+dir = 0
+findpath_x=90 findpath_y=72
+i = 89 j = 72
+min = 161
+dir = 0
+findpath_x=89 findpath_y=72
+i = 88 j = 72
+min = 160
+dir = 0
+findpath_x=88 findpath_y=72
+i = 87 j = 72
+min = 159
+dir = 0
+findpath_x=87 findpath_y=72
+i = 86 j = 72
+min = 158
+dir = 0
+findpath_x=86 findpath_y=72
+i = 85 j = 72
+min = 157
+dir = 0
+findpath_x=85 findpath_y=72
+i = 84 j = 72
+min = 156
+dir = 0
+findpath_x=84 findpath_y=72
+i = 83 j = 72
+min = 155
+dir = 0
+findpath_x=83 findpath_y=72
+i = 82 j = 72
+min = 154
+dir = 0
+findpath_x=82 findpath_y=72
+i = 81 j = 72
+min = 153
+dir = 0
+findpath_x=81 findpath_y=72
+i = 80 j = 72
+min = 152
+dir = 0
+findpath_x=80 findpath_y=72
+i = 79 j = 72
+min = 151
+dir = 0
+findpath_x=79 findpath_y=72
+i = 78 j = 72
+min = 150
+dir = 0
+findpath_x=78 findpath_y=72
+i = 77 j = 72
+min = 149
+dir = 0
+findpath_x=77 findpath_y=72
+i = 76 j = 72
+min = 148
+dir = 0
+findpath_x=76 findpath_y=72
+i = 75 j = 72
+min = 147
+dir = 0
+findpath_x=75 findpath_y=72
+i = 74 j = 72
+min = 146
+dir = 0
+findpath_x=74 findpath_y=72
+i = 73 j = 72
+min = 145
+dir = 0
+findpath_x=73 findpath_y=72
+i = 72 j = 72
+min = 144
+dir = 0
+findpath_x=72 findpath_y=72
+i = 71 j = 72
+min = 143
+dir = 0
+findpath_x=71 findpath_y=72
+i = 70 j = 72
+min = 142
+dir = 0
+findpath_x=70 findpath_y=72
+i = 69 j = 72
+min = 141
+dir = 0
+findpath_x=69 findpath_y=72
+i = 68 j = 72
+min = 140
+dir = 0
+findpath_x=68 findpath_y=72
+i = 67 j = 72
+min = 139
+dir = 0
+findpath_x=67 findpath_y=72
+i = 66 j = 72
+min = 138
+dir = 0
+findpath_x=66 findpath_y=72
+i = 65 j = 72
+min = 137
+dir = 0
+findpath_x=65 findpath_y=72
+i = 64 j = 72
+min = 136
+dir = 0
+findpath_x=64 findpath_y=72
+i = 63 j = 72
+min = 135
+dir = 0
+findpath_x=63 findpath_y=72
+i = 62 j = 72
+min = 134
+dir = 0
+findpath_x=62 findpath_y=72
+i = 61 j = 72
+min = 133
+dir = 0
+findpath_x=61 findpath_y=72
+i = 60 j = 72
+min = 132
+dir = 0
+findpath_x=60 findpath_y=72
+i = 59 j = 72
+min = 131
+dir = 0
+findpath_x=59 findpath_y=72
+i = 58 j = 72
+min = 130
+dir = 0
+findpath_x=58 findpath_y=72
+i = 57 j = 72
+min = 129
+dir = 0
+findpath_x=57 findpath_y=72
+i = 56 j = 72
+min = 128
+dir = 0
+findpath_x=56 findpath_y=72
+i = 55 j = 72
+min = 127
+dir = 0
+findpath_x=55 findpath_y=72
+i = 54 j = 72
+min = 126
+dir = 0
+findpath_x=54 findpath_y=72
+i = 53 j = 72
+min = 125
+dir = 0
+findpath_x=53 findpath_y=72
+i = 52 j = 72
+min = 124
+dir = 0
+findpath_x=52 findpath_y=72
+i = 51 j = 72
+min = 123
+dir = 0
+findpath_x=51 findpath_y=72
+i = 50 j = 72
+min = 122
+dir = 0
+findpath_x=50 findpath_y=72
+i = 49 j = 72
+min = 121
+dir = 0
+findpath_x=49 findpath_y=72
+i = 48 j = 72
+min = 120
+dir = 0
+findpath_x=48 findpath_y=72
+i = 47 j = 72
+min = 119
+dir = 0
+findpath_x=47 findpath_y=72
+i = 46 j = 72
+min = 118
+dir = 0
+findpath_x=46 findpath_y=72
+i = 45 j = 72
+min = 117
+dir = 0
+findpath_x=45 findpath_y=72
+i = 44 j = 72
+min = 116
+dir = 0
+findpath_x=44 findpath_y=72
+i = 43 j = 72
+min = 115
+dir = 0
+findpath_x=43 findpath_y=72
+i = 42 j = 72
+min = 114
+dir = 0
+findpath_x=42 findpath_y=72
+i = 41 j = 72
+min = 113
+dir = 0
+findpath_x=41 findpath_y=72
+i = 40 j = 72
+min = 112
+dir = 0
+findpath_x=40 findpath_y=72
+i = 39 j = 72
+min = 111
+dir = 0
+findpath_x=39 findpath_y=72
+i = 38 j = 72
+min = 110
+dir = 0
+findpath_x=38 findpath_y=72
+i = 37 j = 72
+min = 109
+dir = 0
+findpath_x=37 findpath_y=72
+i = 36 j = 72
+min = 108
+dir = 0
+findpath_x=36 findpath_y=72
+i = 35 j = 72
+min = 107
+dir = 0
+findpath_x=35 findpath_y=72
+i = 34 j = 72
+min = 106
+dir = 0
+findpath_x=34 findpath_y=72
+i = 33 j = 72
+min = 105
+dir = 1
+findpath_x=33 findpath_y=72
+i = 33 j = 71
+min = 104
+dir = 1
+findpath_x=33 findpath_y=71
+i = 33 j = 70
+min = 103
+dir = 1
+findpath_x=33 findpath_y=70
+i = 33 j = 69
+min = 102
+dir = 0
+findpath_x=33 findpath_y=69
+i = 32 j = 69
+min = 101
+dir = 0
+findpath_x=32 findpath_y=69
+i = 31 j = 69
+min = 100
+dir = 0
+findpath_x=31 findpath_y=69
+i = 30 j = 69
+min = 99
+dir = 0
+findpath_x=30 findpath_y=69
+i = 29 j = 69
+min = 98
+dir = 0
+findpath_x=29 findpath_y=69
+i = 28 j = 69
+min = 97
+dir = 0
+findpath_x=28 findpath_y=69
+i = 27 j = 69
+min = 96
+dir = 0
+findpath_x=27 findpath_y=69
+i = 26 j = 69
+min = 95
+dir = 0
+findpath_x=26 findpath_y=69
+i = 25 j = 69
+min = 94
+dir = 0
+findpath_x=25 findpath_y=69
+i = 24 j = 69
+min = 93
+dir = 0
+findpath_x=24 findpath_y=69
+i = 23 j = 69
+min = 92
+dir = 0
+findpath_x=23 findpath_y=69
+i = 22 j = 69
+min = 91
+dir = 0
+findpath_x=22 findpath_y=69
+i = 21 j = 69
+min = 90
+dir = 0
+findpath_x=21 findpath_y=69
+i = 20 j = 69
+min = 89
+dir = 0
+findpath_x=20 findpath_y=69
+i = 19 j = 69
+min = 88
+dir = 0
+findpath_x=19 findpath_y=69
+i = 18 j = 69
+min = 87
+dir = 0
+findpath_x=18 findpath_y=69
+i = 17 j = 69
+min = 86
+dir = 0
+findpath_x=17 findpath_y=69
+i = 16 j = 69
+min = 85
+dir = 0
+findpath_x=16 findpath_y=69
+i = 15 j = 69
+min = 84
+dir = 0
+findpath_x=15 findpath_y=69
+i = 14 j = 69
+min = 83
+dir = 0
+findpath_x=14 findpath_y=69
+i = 13 j = 69
+min = 82
+dir = 0
+findpath_x=13 findpath_y=69
+i = 12 j = 69
+min = 81
+dir = 0
+findpath_x=12 findpath_y=69
+i = 11 j = 69
+min = 80
+dir = 0
+findpath_x=11 findpath_y=69
+i = 10 j = 69
+min = 79
+dir = 0
+findpath_x=10 findpath_y=69
+i = 9 j = 69
+min = 78
+dir = 0
+findpath_x=9 findpath_y=69
+i = 8 j = 69
+min = 77
+dir = 0
+findpath_x=8 findpath_y=69
+i = 7 j = 69
+min = 76
+dir = 0
+findpath_x=7 findpath_y=69
+i = 6 j = 69
+min = 75
+dir = 0
+findpath_x=6 findpath_y=69
+i = 5 j = 69
+min = 74
+dir = 0
+findpath_x=5 findpath_y=69
+i = 4 j = 69
+min = 73
+dir = 0
+findpath_x=4 findpath_y=69
+i = 3 j = 69
+min = 72
+dir = 0
+findpath_x=3 findpath_y=69
+i = 2 j = 69
+min = 71
+dir = 1
+findpath_x=2 findpath_y=69
+i = 2 j = 68
+min = 70
+dir = 1
+findpath_x=2 findpath_y=68
+i = 2 j = 67
+min = 69
+dir = 1
+findpath_x=2 findpath_y=67
+i = 2 j = 66
+min = 68
+dir = 1
+findpath_x=2 findpath_y=66
+i = 2 j = 65
+min = 67
+dir = 1
+findpath_x=2 findpath_y=65
+i = 2 j = 64
+min = 66
+dir = 1
+findpath_x=2 findpath_y=64
+i = 2 j = 63
+min = 65
+dir = 1
+findpath_x=2 findpath_y=63
+i = 2 j = 62
+min = 64
+dir = 1
+findpath_x=2 findpath_y=62
+i = 2 j = 61
+min = 63
+dir = 1
+findpath_x=2 findpath_y=61
+i = 2 j = 60
+min = 62
+dir = 1
+findpath_x=2 findpath_y=60
+i = 2 j = 59
+min = 61
+dir = 1
+findpath_x=2 findpath_y=59
+i = 2 j = 58
+min = 60
+dir = 1
+findpath_x=2 findpath_y=58
+i = 2 j = 57
+min = 59
+dir = 1
+findpath_x=2 findpath_y=57
+i = 2 j = 56
+min = 58
+dir = 1
+findpath_x=2 findpath_y=56
+i = 2 j = 55
+min = 57
+dir = 1
+findpath_x=2 findpath_y=55
+i = 2 j = 54
+min = 56
+dir = 1
+findpath_x=2 findpath_y=54
+i = 2 j = 53
+min = 55
+dir = 1
+findpath_x=2 findpath_y=53
+i = 2 j = 52
+min = 54
+dir = 1
+findpath_x=2 findpath_y=52
+i = 2 j = 51
+min = 53
+dir = 1
+findpath_x=2 findpath_y=51
+i = 2 j = 50
+min = 52
+dir = 1
+findpath_x=2 findpath_y=50
+i = 2 j = 49
+min = 51
+dir = 1
+findpath_x=2 findpath_y=49
+i = 2 j = 48
+min = 50
+dir = 1
+findpath_x=2 findpath_y=48
+i = 2 j = 47
+min = 49
+dir = 1
+findpath_x=2 findpath_y=47
+i = 2 j = 46
+min = 48
+dir = 1
+findpath_x=2 findpath_y=46
+i = 2 j = 45
+min = 47
+dir = 1
+findpath_x=2 findpath_y=45
+i = 2 j = 44
+min = 46
+dir = 0
+findpath_x=2 findpath_y=44
+i = 1 j = 44
+min = 45
+dir = 0
+findpath_x=1 findpath_y=44
+i = 0 j = 44
+min = 44
+dir = 1
+findpath_x=0 findpath_y=44
+i = 0 j = 43
+min = 43
+dir = 1
+findpath_x=0 findpath_y=43
+i = 0 j = 42
+min = 42
+dir = 1
+findpath_x=0 findpath_y=42
+i = 0 j = 41
+min = 41
+dir = 1
+findpath_x=0 findpath_y=41
+i = 0 j = 40
+min = 40
+dir = 1
+findpath_x=0 findpath_y=40
+i = 0 j = 39
+min = 39
+dir = 1
+findpath_x=0 findpath_y=39
+i = 0 j = 38
+min = 38
+dir = 1
+findpath_x=0 findpath_y=38
+i = 0 j = 37
+min = 37
+dir = 1
+findpath_x=0 findpath_y=37
+i = 0 j = 36
+min = 36
+dir = 1
+findpath_x=0 findpath_y=36
+i = 0 j = 35
+min = 35
+dir = 1
+findpath_x=0 findpath_y=35
+i = 0 j = 34
+min = 34
+dir = 1
+findpath_x=0 findpath_y=34
+i = 0 j = 33
+min = 33
+dir = 1
+findpath_x=0 findpath_y=33
+i = 0 j = 32
+min = 32
+dir = 1
+findpath_x=0 findpath_y=32
+i = 0 j = 31
+min = 31
+dir = 1
+findpath_x=0 findpath_y=31
+i = 0 j = 30
+min = 30
+dir = 1
+findpath_x=0 findpath_y=30
+i = 0 j = 29
+min = 29
+dir = 1
+findpath_x=0 findpath_y=29
+i = 0 j = 28
+min = 28
+dir = 1
+findpath_x=0 findpath_y=28
+i = 0 j = 27
+min = 27
+dir = 1
+findpath_x=0 findpath_y=27
+i = 0 j = 26
+min = 26
+dir = 1
+findpath_x=0 findpath_y=26
+i = 0 j = 25
+min = 25
+dir = 1
+findpath_x=0 findpath_y=25
+i = 0 j = 24
+min = 24
+dir = 1
+findpath_x=0 findpath_y=24
+i = 0 j = 23
+min = 23
+dir = 1
+findpath_x=0 findpath_y=23
+i = 0 j = 22
+min = 22
+dir = 1
+findpath_x=0 findpath_y=22
+i = 0 j = 21
+min = 21
+dir = 1
+findpath_x=0 findpath_y=21
+i = 0 j = 20
+min = 20
+dir = 1
+findpath_x=0 findpath_y=20
+i = 0 j = 19
+min = 19
+dir = 1
+findpath_x=0 findpath_y=19
+i = 0 j = 18
+min = 18
+dir = 1
+findpath_x=0 findpath_y=18
+i = 0 j = 17
+min = 17
+dir = 1
+findpath_x=0 findpath_y=17
+i = 0 j = 16
+min = 16
+dir = 1
+findpath_x=0 findpath_y=16
+i = 0 j = 15
+min = 15
+dir = 1
+findpath_x=0 findpath_y=15
+i = 0 j = 14
+min = 14
+dir = 1
+findpath_x=0 findpath_y=14
+i = 0 j = 13
+min = 13
+dir = 1
+findpath_x=0 findpath_y=13
+i = 0 j = 12
+min = 12
+dir = 1
+findpath_x=0 findpath_y=12
+i = 0 j = 11
+min = 11
+dir = 1
+findpath_x=0 findpath_y=11
+i = 0 j = 10
+min = 10
+dir = 1
+findpath_x=0 findpath_y=10
+i = 0 j = 9
+min = 9
+dir = 1
+findpath_x=0 findpath_y=9
+i = 0 j = 8
+min = 8
+dir = 1
+findpath_x=0 findpath_y=8
+i = 0 j = 7
+min = 7
+dir = 1
+findpath_x=0 findpath_y=7
+i = 0 j = 6
+min = 6
+dir = 1
+findpath_x=0 findpath_y=6
+i = 0 j = 5
+min = 5
+dir = 1
+findpath_x=0 findpath_y=5
+i = 0 j = 4
+min = 4
+dir = 1
+findpath_x=0 findpath_y=4
+i = 0 j = 3
+min = 3
+dir = 1
+findpath_x=0 findpath_y=3
+i = 0 j = 2
+min = 2
+dir = 1
+findpath_x=0 findpath_y=2
+i = 0 j = 1
+min = 1
+dir = 1
+findpath_x=0 findpath_y=1
